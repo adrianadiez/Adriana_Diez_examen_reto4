@@ -19,6 +19,6 @@ miss_var_summary(df)
 vis_miss(df)
 
 #Imputacion de missings
-df_knn<- kNN(df, variable=colnames(df[,c(10,11)]), dist_var = colnames(df[,c(10,11)]))
-df_imputado<-df_knn[,-c(12,13)]
+df_knn<- kNN(df, variable=colnames(df[,c(7,10,11)]), dist_var = colnames(df[,c(10,11)]))
+df_imputado<-df_knn[,-c(12,13,14)]
 colnames(df_imputado)

@@ -7,7 +7,7 @@ library(dplyr)
 #* @get /minutos
 function(Transformacion){
   if (Transformacion == 1)
-  transformacion<- df_knn %>%mutate(minutos=scale(df_knn$Minutes, center=TRUE, scale=TRUE))
+  transformacion<- df_imputado %>%mutate(minutos=scale(df_knn$Minutes, center=TRUE, scale=TRUE))
   histograma<- ggplot(transformacion, aes(x=minutos))+ geom_histogram()
   return(histograma)
   if (Transfomacion == 0 )
@@ -16,8 +16,8 @@ function(Transformacion){
 }
 
 
-histograma<- ggplot(df_knn, aes(x=Minutes))+ geom_histogram()
-transformacion<- df_knn %>%mutate(minutos=scale(df_knn$Minutes, center=TRUE, scale=TRUE))
+histograma<- ggplot(df_imputado, aes(x=Minutes))+ geom_histogram()
+transformacion<- df_imputado %>%mutate(minutos=scale(df_knn$Minutes, center=TRUE, scale=TRUE))
 histograma<- ggplot(transformacion, aes(x=minutos))+ geom_histogram()
 plot(transformacion, x=)
 
